@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+
+  <title>HIFPJ | Hidden Issues From People Justice</title>
+  <meta name="description" content="HIFPJ helps people understand legal information and prepare complaint drafts.">
+
+  <!-- Website browser tab icon -->
+  <link rel="icon" type="image/png" href="Screenshot 2026-10-20 173406.png">
+
+  <!-- CSS design -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+  <a class="brand" href="#home">
+    <img src="HIFPJ Justice Shield Logo.png" alt="HIFPJ Logo" class="brand-logo">
+    <span>
+      <b>HIFPJ</b>
+      <small>HIDDEN ISSUES FROM PEOPLE JUSTICE</small>
+    </span>
+  </a>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#laws">Legal Guide</a>
+    <a href="#report">Report Builder</a>
+  </nav>
+
+  <a class="nav-button" href="#report">Start a Report ↗</a>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow">A PEOPLE-FIRST JUSTICE PROJECT</span>
+
+      <h1>Your voice matters.<br>
+        <span>Justice starts here.</span>
+      </h1>
+
+      <p>
+        Organize your experience, explore potentially relevant Indian laws,
+        and prepare a complaint draft through a guided process.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="#report">Prepare a Complaint →</a>
+        <a class="button secondary" href="#laws">Explore Laws</a>
+      </div>
+
+      <div class="trust">
+        ✓ Evidence optional
+        <span>✓ Review before export</span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img src="HIFPJ Justice Shield Logo.png" alt="HIFPJ justice emblem" class="hero-logo">
+
+      <span class="eyebrow">HIFPJ REPORT BUILDER</span>
+      <h2>A safer first step toward being heard.</h2>
+
+      <div class="mini-step">
+        <b>01</b>
+        <span><strong>Describe the incident</strong>
+          <small>Category, date and location</small>
+        </span>
+      </div>
+
+      <div class="mini-step">
+        <b>02</b>
+        <span><strong>Explore legal information</strong>
+          <small>Read possible legal matches</small>
+        </span>
+      </div>
+
+      <div class="mini-step">
+        <b>03</b>
+        <span><strong>Prepare your draft</strong>
+          <small>Review and download locally</small>
+        </span>
+      </div>
+
+      <p class="notice">
+        Demonstration only. Reports are not sent to authorities,
+        and this website does not guarantee anonymity.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-title">
+      <span class="eyebrow">OUR PURPOSE</span>
+      <h2>Everyone deserves to be heard.</h2>
+      <p>
+        HIFPJ aims to make complaint preparation less confusing for
+        people facing threats, discrimination, fraud or abuse.
+      </p>
+    </div>
+
+    <div class="features">
+      <article class="feature">
+        <span class="feature-icon">⚖</span>
+        <h3>Legal Awareness</h3>
+        <p>Explore general legal information and official references.</p>
+      </article>
+
+      <article class="feature">
+        <span class="feature-icon">🔒</span>
+        <h3>Privacy Awareness</h3>
+        <p>A real service needs tested security and clear privacy policies.</p>
+      </article>
+
+      <article class="feature">
+        <span class="feature-icon">📄</span>
+        <h3>Complaint Preparation</h3>
+        <p>Organize information into a draft you can review and download.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section laws-section" id="laws">
+    <div class="section-title">
+      <span class="eyebrow">INDIAN LEGAL INFORMATION</span>
+      <h2>Explore the Laws</h2>
+      <p>Choose a topic to explore general information and official sources.</p>
+    </div>
+
+    <div class="law-grid" id="lawCards"></div>
+
+    <p class="legal-disclaimer">
+      This information is educational, not legal advice. A category match
+      does not establish that an offence occurred. Applicable law depends
+      on the facts and should be confirmed with a qualified lawyer.
+    </p>
+
+    <div class="aid-card">
+      <div>
+        <h3>Need help understanding your options?</h3>
+        <p>Explore free legal aid through India's legal services institutions.</p>
+      </div>
+      <a class="button primary"
+         href="https://nalsa.gov.in/faqs/"
+         target="_blank" rel="noopener noreferrer">
+        NALSA Legal Aid ↗
+      </a>
+    </div>
+  </section>
+
+  <section class="section report-section" id="report">
+    <div class="section-title">
+      <span class="eyebrow">HIFPJ REPORT BUILDER</span>
+      <h2>Prepare a Complaint</h2>
+      <p>Use fictional details while testing this demo.</p>
+    </div>
+
+    <div class="form-card">
+      <div class="progress-heading">
+        <span id="stepLabel">Step 1 of 3</span>
+        <span id="percent">33%</span>
+      </div>
+
+      <div class="progress-track">
+        <div id="progressBar"></div>
+      </div>
+
+      <form id="complaintForm">
+        <!-- STEP 1 -->
+        <div class="form-step active" data-step="0">
+          <h3>01. Incident Details</h3>
+          <p class="muted">Describe what happened using facts where possible.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="category">Complaint Category *</label>
+              <select id="category" required>
+                <option value="">Choose a category</option>
+                <option value="threats">Threats or physical violence</option>
+                <option value="caste">Caste-based discrimination or abuse</option>
+                <option value="domestic">Domestic violence</option>
+                <option value="fraud">Fraud or financial cheating</option>
+                <option value="property">Family property dispute</option>
+                <option value="consumer">Consumer complaint</option>
+                <option value="workplace">Workplace exploitation or harassment</option>
+                <option value="corruption">Corruption or abuse of power</option>
+                <option value="other">Other / not sure</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="incidentDate">Approximate Date (optional)</label>
+              <input type="date" id="incidentDate">
+            </div>
+
+            <div class="field">
+              <label for="location">General Location *</label>
+              <input id="location" maxlength="160"
+                     placeholder="Town or district" required>
+            </div>
+
+            <div class="field">
+              <label for="accused">Person / Organization (optional)</label>
+              <input id="accused" maxlength="120"
+                     placeholder="Use a fictional name for testing">
+            </div>
+
+            <div class="field full">
+              <label for="details">What Happened? *</label>
+              <textarea id="details" rows="5" maxlength="3000"
+                        placeholder="Describe the incident..." required></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="danger">Is Anyone in Immediate Danger?</label>
+              <select id="danger">
+                <option>Not sure</option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="lawMatch" class="law-match hidden" aria-live="polite"></div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="form-step" data-step="1">
+          <h3>02. Supporting Information</h3>
+          <p class="muted">Evidence is optional. Files are not uploaded.</p>
+
+          <div class="field">
+            <label for="evidence">Evidence File (optional)</label>
+            <input type="file" id="evidence"
+                   accept=".pdf,.jpg,.jpeg,.png,.txt,.mp3,.mp4">
+            <small>Only the filename can appear in the draft.</small>
+          </div>
+
+          <div class="field">
+            <label for="witness">Witness or Other Context (optional)</label>
+            <textarea id="witness" rows="4" maxlength="1500"
+                      placeholder="Additional relevant context..."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="nextStep">What Help Are You Looking For?</label>
+            <select id="nextStep">
+              <option>Prepare a written complaint draft</option>
+              <option>Identify the appropriate official channel</option>
+              <option>Seek legal advice first</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <p class="notice">
+            Do not enter passwords, identity numbers or unnecessary
+            private information. This prototype is not a secure reporting service.
+          </p>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="form-step" data-step="2">
+          <h3>03. Review Your Report</h3>
+          <p class="muted">Check the information before creating your draft.</p>
+
+          <div id="reviewContent" class="review-content"></div>
+
+          <label class="confirmation">
+            <input type="checkbox" id="confirmReview">
+            <span>I understand this is only a draft and has not been sent.</span>
+          </label>
+
+          <div id="draftResult" class="draft-result hidden">
+            <h3>Draft Created</h3>
+            <p>Nothing was transmitted to any department.</p>
+
+            <textarea id="draftOutput" rows="14" readonly></textarea>
+
+            <div class="actions">
+              <button type="button" class="button secondary" id="copyButton">
+                Copy Draft
+              </button>
+              <button type="button" class="button primary" id="downloadButton">
+                Download TXT
+              </button>
+            </div>
+
+            <p id="copyStatus" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="form-navigation">
+          <button type="button" id="backButton"
+                  class="button secondary hidden">← Back</button>
+
+          <button type="button" id="nextButton"
+                  class="button primary">Continue →</button>
+
+          <button type="button" id="createButton"
+                  class="button primary hidden">Create Draft</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <a class="brand" href="#home">
+    <img src="hifpj-logo.png" alt="HIFPJ Logo" class="brand-logo">
+    <span>
+      <b>HIFPJ</b>
+      <small>HIDDEN ISSUES FROM PEOPLE JUSTICE</small>
+    </span>
+  </a>
+
+  <p>
+    Independent project concept. Not affiliated with government or police.
+    Not an emergency service or a substitute for legal advice.
+  </p>
+</footer>
+
+</body>
+</html>
